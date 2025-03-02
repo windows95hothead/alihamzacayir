@@ -20,7 +20,7 @@ async def on_member_join(member):
 
 @bot.command()
 async def start(ctx):
-    await ctx.send("Merhaba! Ben bir sohbet yöneticisi botuyum!")
+    await ctx.send("Merhaba! Ben bir BANLAMA botuyum!")
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
