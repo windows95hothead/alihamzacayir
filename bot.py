@@ -12,6 +12,12 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def on_ready():
     print(f'Giriş yapıldı:  {bot.user.name}')
 
+@bot.event
+async def on_member_join(member):
+    # Karşılama mesajı gönderme
+    for channel in member.guild.text_channels:
+        await channel.send(f'Hoş geldiniz: {member.mention}!')
+
 @bot.command()
 async def start(ctx):
     await ctx.send("Merhaba! Ben bir sohbet yöneticisi botuyum!")
@@ -37,3 +43,4 @@ async def ban_error(ctx, error):
 
 bot.run(token)
 #TEST TEST
+#HELLO THERE
